@@ -41,11 +41,11 @@ jobs:
         id: buildno
         run: |
          echo build no
-         echo  ${{build_no = format('V-1.1.{0} ', github.run_number)}} 
+         echo  "build = ${{ format('V-1.1.{0} ', github.run_number)}} "  > $GITHUB_ENV
          
       - name: Use the value
         id: step_two
-        run: echo "${{ env.build_no }}"        
+        run: echo "${{ env.build }}"        
 
          
       - name: Output Run Attempt
