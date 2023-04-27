@@ -40,6 +40,7 @@ jobs:
       - name: Output Run Number
         id: random-build-generator
         run: |
+         echo build no
          echo  ${{format('V-1.1.{0} ', github.run_number)}} 
         #  echo build no
        #   echo $GITHUB_OUTPUT
