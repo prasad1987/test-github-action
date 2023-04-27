@@ -39,7 +39,7 @@ jobs:
         run: echo ${{ github.run_id }}
       - name: Output Run Number
         run: |
-          echo  ${{format('Hello {0} ', github.run_id)}}
+          echo  ${{format('Hello {0} ', github.run_number)}}
         # echo ${{ 'V-1.1.${{ github.run_attempt }}'}} 
          
       - name: Output Run Attempt
