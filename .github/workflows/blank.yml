@@ -38,11 +38,15 @@ jobs:
 #       - name: Output Run ID
 #         run: echo ${{ github.run_id }}>> $GITHUB_OUTPUT
       - name: Output Run Number
+        id: random-build-generator
         run: |
-          echo  ${{format('V-1.1.{0} ', github.run_number)}} >> $GITHUB_OUTPUT
-          echo build no
-          echo $GITHUB_OUTPUT
+          echo  ${{format('V-1.1.{0} ', github.run_number)}} 
+        #  echo build no
+       #   echo $GITHUB_OUTPUT
         # echo ${{ 'V-1.1.${{ github.run_attempt }}'}} 
+        
+      - name: Get build no
+       run: echo  ${{ steps.random-build-generator.outputs.SELECTED_COLOR }}"
          
       - name: Output Run Attempt
         run: echo ${{ github.run_attempt }}
