@@ -35,13 +35,13 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
           
-      - name: Output Run ID
-        run: echo ${{ github.run_id }}
+#       - name: Output Run ID
+#         run: echo ${{ github.run_id }}>> $GITHUB_OUTPUT
       - name: Output Run Number
         run: |
-          echo  ${{format('V-1.1.{0} ', github.run_number)}} >> $build_no
+          echo  ${{format('V-1.1.{0} ', github.run_number)}} >> $GITHUB_OUTPUT
           echo build no
-          echo $build_no
+          echo $GITHUB_OUTPUT
         # echo ${{ 'V-1.1.${{ github.run_attempt }}'}} 
          
       - name: Output Run Attempt
